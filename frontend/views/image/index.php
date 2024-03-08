@@ -12,6 +12,17 @@ use yii\widgets\Pjax;
 
 $this->title = 'Изображения';
 $this->params['breadcrumbs'][] = $this->title;
+$css=<<<CSS
+.pagination > li > a {
+    padding:5px;
+}
+.pagination > li.active > a {
+    color:white;
+    background-color:#1c84c6;
+    padding:5px;
+}
+CSS;
+$this->registerCss($css);
 ?>
 <div class="image-index">
 
