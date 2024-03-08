@@ -1,10 +1,11 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /** @var yii\web\View $this */
-/** @var common\models\Book $model */
+/** @var common\models\Image $model */
 
 \yii\web\YiiAsset::register($this);
 ?>
@@ -37,6 +38,16 @@ use yii\widgets\DetailView;
                 }
             ],
             'datetime',
+            [
+                'format'=>'raw',
+                'label'=>'Загрузка в архиве',
+                'value'=>function($model){
+                    return Html::a(
+                        Html::img('/upload/images/download.png',['height' => '50px']),
+                        '/download/'.$model->id,
+                        ['data-pjax' => 0]);
+                }
+            ],
         ],
     ]) ?>
 

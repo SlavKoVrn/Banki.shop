@@ -4,9 +4,9 @@ namespace frontend\controllers;
 
 use common\models\Image;
 use common\models\ImageFrontSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * ImageController implements the CRUD actions for Image model.
@@ -57,4 +57,24 @@ class ImageController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionDownload($id)
+    {
+        $imagesDir = Yii::getAlias('@base');
+        $image = $this->findModel($id);
+        $filePath = $imagesDir . $image->path;
+
+        if (file_exists($filePath)) {
+            $zipTempDir = sys_get_temp_dir();
+            $zipFilePath = $zipTempDir . '/'.$image->slug.'.zip';
+
+            $zip = new \ZipArchive();
+            if ($zip->open($zipFilePath, \ZipArchive::CREATE) === TRUE) {
+                $zip->addFile($filePath, basename($filePath));
+                $zip->close();
+                Yii::$app->response->sendFile($zipFilePath)->send();
+            }
+        }
+    }
+
 }

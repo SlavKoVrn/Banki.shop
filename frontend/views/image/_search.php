@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'name') ?>
+    <?= $form->field($model, 'name')->label(false) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Поиск', ['class' => 'btn btn-primary']) ?>

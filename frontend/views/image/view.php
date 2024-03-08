@@ -38,6 +38,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             'datetime',
+            [
+                'format'=>'raw',
+                'label'=>'Загрузка в архиве',
+                'value'=>function($model){
+                    return Html::a(
+                        Html::img('/upload/images/download.png',['height' => '50px']),
+                        '/download/'.$model->id,
+                        ['data-pjax' => 0]);
+                }
+            ],
         ],
     ]) ?>
 

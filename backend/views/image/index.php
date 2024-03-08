@@ -96,6 +96,15 @@ $domainScheme = Yii::$app->request->getHostInfo();
                     ]
                 ]
             ],
+            [
+                'format' => 'raw',
+                'content' => function($model) use ($domainScheme){
+                    return Html::a(
+                        Html::img('/upload/images/download.png',['height' => '50px']),
+                        '/download/'.$model->id,
+                        ['data-pjax' => 0]);
+                }
+            ],
         ],
     ]); ?>
 
