@@ -1,5 +1,6 @@
 <?php
 return [
+    'name' => 'Banki.shop',
     'language' => 'ru-RU',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
