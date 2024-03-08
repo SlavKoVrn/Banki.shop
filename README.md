@@ -1,3 +1,73 @@
+<h2 align="center">Демо версия</h2>
+<a href="http://banki.shop.kadastrcard.ru/admin" target="_blank">http://banki.shop.kadastrcard.ru/admin</a>
+
+```
+логин:admin
+пароль:123456
+```
+
+<h2 align="center">Тестовое задание</h2>
+<div class=WordSection1>
+
+<h4 align="center">Разработать прототип хостинга изображений.</h4>
+<p class=MsoNormal>Инструменты для реализации задания:</p>
+
+<p class=MsoNormal>- <span class=SpellE>фреймворк</span> <span class=SpellE>Laravel</span>/Yii2</p>
+
+<p class=MsoNormal>- <span class=SpellE>mysql</span></p>
+
+<h5 align="center">1. Реализовать форму для загрузки изображений.</h5>
+
+<p class=MsoNormal>При загрузке изображений должны соблюдаться следующие
+правила:</p>
+
+<p class=MsoNormal>- в 1 запрос, в одной форме, можно загружать до 5 файлов</p>
+
+<p class=MsoNormal>- название каждого файла должно <span class=SpellE>транслителироваться</span>
+на английский язык и приводиться к нижнему регистру</p>
+
+<p class=MsoNormal>- название каждого файла должно быть уникальным, и, если
+файл с таким названием существует, нужно задавать новому файлу уникальное
+название</p>
+
+<p class=MsoNormal>- все файлы должны отправляться в одну директорию</p>
+
+<p class=MsoNormal>- записывать в БД инфу о загруженных файлах: название файла,
+дата и время загрузки</p>
+
+<h5 align="center">2. Реализовать страницу просмотра информации об
+                   изображениях.</h5>
+
+<p class=MsoNormal>На странице должны быть реализованы:</p>
+
+<p class=MsoNormal>- вывод информации о загруженных файлах (название файла,
+дата и время загрузки)</p>
+
+<p class=MsoNormal>- просмотр превью изображения</p>
+
+<p class=MsoNormal>- возможность просмотра оригинального изображения</p>
+
+<p class=MsoNormal>- сортировка по названию/дате и времени загрузки изображения</p>
+
+<p class=MsoNormal>- возможность скачать файл в <span class=SpellE>zip</span>
+архиве</p>
+
+<h5 align="center">3. Реализовать API</h5>
+
+<p class=MsoNormal>- вывод информации о загруженных файлах в <span
+class=SpellE>json</span></p>
+
+<p class=MsoNormal>- получить данные о загруженном файле по <span class=SpellE>id</span>
+в <span class=SpellE>json</span></p>
+
+<p class=MsoNormal>Код задания необходимо выложить на <span class=SpellE>github</span>/<span
+class=SpellE>gitlab</span>/<span class=SpellE>bitbucket</span>.</p>
+
+<p class=MsoNormal>Бонусом будет возможность просмотра результата в общем
+доступе (<span class=GramE>например</span> <span class=SpellE>vds</span>)</p>
+
+</div>
+
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
