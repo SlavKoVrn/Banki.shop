@@ -11,7 +11,10 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'defaultRoute' => 'image',
+    'modules' => [
+        'gridview' => ['class' => 'kartik\grid\Module'],
+    ],
     'components' => [
         'request' => [
             'baseUrl' => '/admin',
