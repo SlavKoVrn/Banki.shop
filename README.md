@@ -2,6 +2,10 @@
 
 <a href="http://banki.shop.kadastrcard.ru/api" target="_blank">http://banki.shop.kadastrcard.ru/api - LIST images</a><br/>
 <a href="http://banki.shop.kadastrcard.ru/api?page=2" target="_blank">http://banki.shop.kadastrcard.ru/api?page=2 - LIST page 2 images</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=name" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=name - LIST images SORT BY name</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=-name" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=-name - LIST images SORT BY name DESC</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=datetime" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=datetime - LIST images SORT BY datetime</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=-datetime" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=-datetime - LIST images SORT BY datetime DESC</a><br/>
 <a href="http://banki.shop.kadastrcard.ru/api/image/2" target="_blank">http://banki.shop.kadastrcard.ru/api/image/2 - VIEW 2 image</a>
 
 <h2 align="center">Демо версия</h2>
