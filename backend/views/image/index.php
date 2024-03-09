@@ -20,6 +20,15 @@ $domainScheme = Yii::$app->request->getHostInfo();
 <div class="image-index">
 
     <p>
+        <?php
+        $js =<<<JS
+            function clearImagesUpload()
+            {
+                $("#images-upload").fileinput("clear");
+            }
+JS;
+        $this->registerJs($js);
+        ?>
         <?= FileInput::widget([
             'name' => 'images[]',
             'options' => ['multiple' => true, 'id' => 'images-upload'],
@@ -44,16 +53,19 @@ $domainScheme = Yii::$app->request->getHostInfo();
                     'showUpload' => false,
                 ],
                 'maxFileCount' => 5,
-                'maxFileSize' => 10000,
                 'msgPlaceholder' => 'Выбор файлов',
             ],
             'pluginEvents' => [
                 'filebatchselected' => 'function() {
                     $(this).fileinput("upload");
                  }',
-                'filebatchuploadcomplete' => 'function() {
-                    $(this).fileinput("clear");
-                    $.pjax.reload({container: "#images-gridview", async: false, timeout: false});
+                'filebatchuploadcomplete' => 'function(event, files) {
+                    if (Object.keys(files).length === 0) {
+                        $(this).fileinput("clear");
+                        $.pjax.reload({container: "#images-gridview", async: false, timeout: false});
+                    } else {
+                        setTimeout(clearImagesUpload, 5000);
+                    }
                  }',
             ],
         ]);

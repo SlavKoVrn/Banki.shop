@@ -28,6 +28,14 @@ class ImageController extends Controller
             $transaction = Yii::$app->db->beginTransaction();
             try {
                 foreach ($images as $image){
+                    $imageInfo = @getimagesize($image->tempName);
+                    if ($imageInfo == false) {
+                        throw new \Exception('Принимаются только изображения');
+                    }
+                    $fileSize = filesize($image->tempName);
+                    if ($fileSize > 1000000){
+                        throw new \Exception('Размер файла больше 1 000 000 байт');
+                    }
                     //-----------------------
                     $uploadDir = Yii::getAlias('@upload/images');
                     if (!is_dir($uploadDir)) {
@@ -57,7 +65,7 @@ class ImageController extends Controller
                 $transaction->commit();
             } catch (\Exception $e) {
                 $transaction->rollBack();
-                return $files['error'] = $e->getMessage();
+                $files['error'] = $e->getMessage();
             }
         }
         return $files;
