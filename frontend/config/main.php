@@ -12,6 +12,11 @@ return [
     'bootstrap' => ['log'],
     'defaultRoute' => 'image',
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'api' => [
+            'class' => 'frontend\modules\api\Module',
+        ],
+    ],
     'components' => [
         'request' => [
             'baseUrl' => '',
@@ -43,6 +48,7 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'download/<id:\d+>' => 'image/download',
+                'GET api/image/<id:\d+>' => 'api/default/view',
             ],
         ],
     ],
