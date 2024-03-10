@@ -29,12 +29,7 @@ FIXTURE;
     {
         $lowerModel = strtolower($model);
         $modelName = "common\\models\\".$model;
-        $allModels = $modelName::find()->all();
-        $modelsArray = [];
-        foreach ($allModels as $currentModel){
-            $modelsArray[] = $currentModel->attributes;
-
-        }
+        $modelsArray = $modelName::find()->asArray()->all();
         $fileData = Yii::getAlias('@backend').'/tests/_data/'.$lowerModel.'.php';
         $fileContent = "<?php\nreturn ".var_export($modelsArray, true).";";
         file_put_contents($fileData, $fileContent);
