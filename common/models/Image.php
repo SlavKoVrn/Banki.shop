@@ -79,9 +79,4 @@ class Image extends \yii\db\ActiveRecord
         ];
     }
 
-    public function afterFind()
-    {
-        parent::afterFind();
-        $this->datetime = date('d.m.Y H:i', strtotime($this->datetime));
-    }
 }

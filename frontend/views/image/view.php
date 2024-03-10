@@ -37,7 +37,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     return number_format($model->size,0,'.',' ');
                 }
             ],
-            'datetime',
+            [
+                'attribute' => 'datetime',
+                'value' => function($model){
+                    return date('d.m.Y H:i', strtotime($model->datetime));
+                }
+            ],
             [
                 'format'=>'raw',
                 'label'=>'Загрузка в архиве',

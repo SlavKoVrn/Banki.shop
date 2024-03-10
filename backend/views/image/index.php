@@ -106,7 +106,10 @@ JS;
                     'pluginOptions'  => [
                         'autoclose' => true,
                     ]
-                ]
+                ],
+                'content' => function($model){
+                    return date('d.m.Y H:i', strtotime($model->datetime));
+                }
             ],
             [
                 'format' => 'raw',
