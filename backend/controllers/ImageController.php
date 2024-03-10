@@ -24,17 +24,21 @@ class ImageController extends Controller
 
         $files = [];
         $images = UploadedFile::getInstancesByName('images');
+
         if ($images){
             $transaction = Yii::$app->db->beginTransaction();
             try {
+                if (count($images) > 5) {
+                    throw new \Exception('Только 5 файлов');
+                }
                 foreach ($images as $image){
                     $imageInfo = @getimagesize($image->tempName);
                     if ($imageInfo == false) {
                         throw new \Exception('Принимаются только изображения');
                     }
                     $fileSize = filesize($image->tempName);
-                    if ($fileSize > 1000000){
-                        throw new \Exception('Размер файла больше 1 000 000 байт');
+                    if ($fileSize > 1048576){
+                        throw new \Exception('Размер файла больше 1 048 576 байт');
                     }
                     //-----------------------
                     $uploadDir = Yii::getAlias('@upload/images');

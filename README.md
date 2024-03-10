@@ -1,21 +1,3 @@
-<h2 align="center">API</h2>
-
-<a href="http://banki.shop.kadastrcard.ru/api" target="_blank">http://banki.shop.kadastrcard.ru/api - LIST images</a><br/>
-<a href="http://banki.shop.kadastrcard.ru/api?page=2" target="_blank">http://banki.shop.kadastrcard.ru/api?page=2 - LIST page 2 images</a><br/>
-<a href="http://banki.shop.kadastrcard.ru/api?sort=name" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=name - LIST images SORT BY name</a><br/>
-<a href="http://banki.shop.kadastrcard.ru/api?sort=-name" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=-name - LIST images SORT BY name DESC</a><br/>
-<a href="http://banki.shop.kadastrcard.ru/api?sort=datetime" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=datetime - LIST images SORT BY datetime</a><br/>
-<a href="http://banki.shop.kadastrcard.ru/api?sort=-datetime" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=-datetime - LIST images SORT BY datetime DESC</a><br/>
-<a href="http://banki.shop.kadastrcard.ru/api/image/2" target="_blank">http://banki.shop.kadastrcard.ru/api/image/2 - VIEW 2 image</a>
-
-<h2 align="center">Демо версия</h2>
-<a href="http://banki.shop.kadastrcard.ru/admin" target="_blank">http://banki.shop.kadastrcard.ru/admin</a>
-
-```
-логин:admin
-пароль:123456
-```
-
 <h2 align="center">Тестовое задание</h2>
 <div class=WordSection1>
 
@@ -77,6 +59,46 @@ class=SpellE>gitlab</span>/<span class=SpellE>bitbucket</span>.</p>
 доступе (<span class=GramE>например</span> <span class=SpellE>vds</span>)</p>
 
 </div>
+<h2 align="center">Демо версия</h2>
+<a href="http://banki.shop.kadastrcard.ru/admin" target="_blank">http://banki.shop.kadastrcard.ru/admin</a>
+
+```
+логин:admin
+пароль:123456
+```
+
+<h2 align="center">API</h2>
+
+<a href="http://banki.shop.kadastrcard.ru/api" target="_blank">http://banki.shop.kadastrcard.ru/api - LIST images</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?page=2" target="_blank">http://banki.shop.kadastrcard.ru/api?page=2 - LIST page 2 images</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=name" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=name - LIST images SORT BY name</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=-name" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=-name - LIST images SORT BY name DESC</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=datetime" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=datetime - LIST images SORT BY datetime</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api?sort=-datetime" target="_blank">http://banki.shop.kadastrcard.ru/api?sort=-datetime - LIST images SORT BY datetime DESC</a><br/>
+<a href="http://banki.shop.kadastrcard.ru/api/image/2" target="_blank">http://banki.shop.kadastrcard.ru/api/image/2 - VIEW 2 image</a>
+
+<h2 align="center">Тесты</h2>
+
+<h4 align="center">Установка</h4>
+
+```
+composer require codeception/module-rest
+composer require codeception/module-phpbrowser
+/vendor/codeception/module-phpbrowser/src/Codeception/Module/PhpBrowser.php
+строка 127
+заменить
+    public ?AbstractBrowser $client = null;
+на
+    public $client = null;
+php vendor/bin/codecept build
+```
+
+<h4 align="center">Запуск</h4>
+
+```
+php -d display_errors=0 vendor/bin/codecept run -- backend/tests/functional/UploadCest
+php -d display_errors=0 vendor/bin/codecept run -- backend/tests/functional/ApiCest
+```
 
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">

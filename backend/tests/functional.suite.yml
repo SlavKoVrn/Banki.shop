@@ -3,3 +3,7 @@ actor: FunctionalTester
 modules:
     enabled:
         - Yii2
+        - REST:
+              depends: PhpBrowser
+              url: http://banki.shop.kadastrcard.ru
+              shortDebugResponse: 300
